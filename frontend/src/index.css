@@ -1,0 +1,48 @@
+.navbar-nav{
+    display: flex;
+    justify-content: end;
+}
+img{
+    height: 500px;
+}
+.card{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    font-size: 0.6em;
+    width: 300px;
+   
+  
+    
+
+}
+.card img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px lightgray;
+}
+.background-image{
+    height: 200px;
+    width: 300px;
+    background-image: url(https://images.pexels.com/photos/28553655/pexels-photo-28553655.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+button{
+    margin: 5px;
+}
+.icon{
+    border-radius: 50%;
+}
+div ol{
+    list-style: none;
+}
+.product-list{
+    display: flex;
+    background-color: #ffffff;
+    width: 600px;
+}
+

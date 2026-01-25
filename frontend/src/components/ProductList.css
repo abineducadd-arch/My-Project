@@ -1,0 +1,139 @@
+/* ===== Dropdown Wrapper ===== */
+.shop-dropdown {
+  position: absolute;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1050px;
+  background: #f2f3f5;
+  border-radius: 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+/* ===== LEFT PROMO CARD ===== */
+.shop-promo {
+  background: linear-gradient(135deg, #0b132b, #1c2541);
+  border-radius: 20px;
+  padding: 25px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.shop-promo .badge {
+  background: #ffee00;
+  color: #000;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.shop-promo h2 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.shop-promo button {
+  margin-top: 20px;
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== RIGHT PRODUCT LIST ===== */
+.shop-list {
+  background: #fff;
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* each row */
+.shop-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.shop-item:hover {
+  background: #f6f6f6;
+}
+
+/* highlighted row */
+.shop-item.active {
+  background: #ffd45c;
+}
+
+/* product image */
+.shop-item img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* text area */
+.shop-item-content h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.shop-item-content p {
+  font-size: 13px;
+  color: #666;
+  margin: 2px 0 0;
+}
+
+/* NEW badge */
+.shop-item .new {
+  background: #e9ecff;
+  color: #3f5efb;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 6px;
+  margin-left: 6px;
+}
+
+/* ===== LEFT MENU BELOW PROMO ===== */
+.shop-links {
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.shop-links div {
+  padding: 14px 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shop-links div:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.shop-links div:hover {
+  background: #f5f5f5;
+}
