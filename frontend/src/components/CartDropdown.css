@@ -1,0 +1,54 @@
+/* Cart Dropdown Styles */
+.cart-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 380px;
+  background: white;
+  border-radius: 10px;
+  z-index: 1050;
+  margin-top: 10px;
+  border: 1px solid #dee2e6;
+}
+
+.cart-badge {
+  font-size: 0.65rem;
+  padding: 0.25em 0.5em;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Responsive Design for Cart Dropdown */
+@media (max-width: 768px) {
+  .cart-dropdown {
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+    max-height: 80vh;
+  }
+}
+
+/* Bootstrap overrides for cart dropdown */
+.cart-dropdown-header .btn-close {
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+
+.cart-item-quantity .btn {
+  min-width: 30px;
+  padding: 0.2rem 0.5rem;
+}
+
+/* Hover effects */
+.btn-checkout:hover {
+  background-color: #000 !important;
+}
+
+.btn-view-cart:hover {
+  background-color: #f8f9fa;
+}

@@ -1,56 +1,86 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import { useCart } from "../context/CartContext";
 import "./ShopDropDown.css";
 import { Accordian as data } from "../data/Accordian";
-const ShopDropDown = () => {
-  const [select, setSelect] = useState("");
-  return (
-    <div>
-      <h1>Best Sellers</h1>
 
-      <div>
-        {data.map((x) => (
-          <button className="head-button" onClick={() => setSelect(x.id)} key={x.id}>
-            {x.name}
+const ShopDropDown = () => {
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const { addToCart } = useCart();
+  
+  
+  useEffect(() => {
+    if (data.length > 0) {
+      setSelectedCategory(data[0].id);
+    }
+  }, []);
+
+  
+  const selectedCategoryData = useMemo(() => {
+    return data.find(item => item.id === selectedCategory);
+  }, [selectedCategory]);
+
+  const handleAddToCart = (product, event) => {
+    event.stopPropagation();
+    addToCart(product);
+  };
+
+  return (
+    <div className="shop-dropdown-container">
+      <h1 className="shop-title">Best Sellers</h1>
+
+     
+      <div className="category-buttons">
+        {data.map((category) => (
+          <button
+            className={`category-button ${selectedCategory === category.id ? 'active' : ''}`}
+            onClick={() => setSelectedCategory(category.id)}
+            key={category.id}
+            aria-pressed={selectedCategory === category.id}
+          >
+            {category.name}
           </button>
         ))}
       </div>
-      <div>
-        {data.map((item) => (
+
+      
+      <div className="products-container">
+        {selectedCategoryData ? (
           <div className="product-grid">
-            {select === item.id
-              ? item.card.map((x) => (
-                  <div className="item"  key={x.id}>
-                    
-                    <div
-                    className="backgroung-image"
-                      style={{
-                        backgroundImage: `url(${x.image})`,
-                        height: "200px",
-                        width: "200px",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        display : "flex",
-                        justifyContent : "end",
-                        alignItems :"start"
-                      }}
+            {selectedCategoryData.card.map((product) => (
+              <div className="product-card" key={product.id}>
+                <div className="product-image-container">
+                  <div
+                    className="product-image"
+                    style={{
+                      backgroundImage: `url(${product.image})`,
+                    }}
+                  >
+                    <button 
+                      className="add-to-cart-btn"
+                      onClick={(e) => handleAddToCart(product, e)}
                     >
-                      <button>+  Add</button>
-                    </div>
-                    <div>
-                      <div className="heading">
-                        <h5>{x.name}</h5>
-                        <h5>{x.price}</h5>
-                      </div>
-                      <p>{x.para}</p>
-                    </div>
+                      <span>+</span> Add
+                    </button>
                   </div>
-                ))
-              : null}
+                </div>
+                
+                <div className="product-details">
+                  <div className="product-header">
+                    <h5 className="product-name">{product.name}</h5>
+                    <h5 className="product-price">{product.price}</h5>
+                  </div>
+                  <p className="product-description">{product.para}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        ) : (
+          <div className="no-products">
+            <p>No products available</p>
+          </div>
+        )}
       </div>
     </div>
-    
   );
 };
 

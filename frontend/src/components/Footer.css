@@ -1,0 +1,273 @@
+/* Footer Styles */
+.footer {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+  padding: 60px 0 30px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Top Section */
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #333;
+}
+
+@media (max-width: 992px) {
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer Columns */
+.footer-column {
+  margin-bottom: 30px;
+}
+
+.footer-column.wide {
+  grid-column: span 1;
+}
+
+@media (min-width: 992px) {
+  .footer-column.wide {
+    grid-column: span 1;
+  }
+}
+
+.footer-heading {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Footer Lists */
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list-item {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-list-item:hover {
+  color: #fff;
+}
+
+.footer-list-item .highlight {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Nested List */
+.nested-list {
+  list-style: none;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+.nested-list li {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.nested-list li:before {
+  content: "•";
+  color: #666;
+  position: absolute;
+  left: -15px;
+}
+
+/* Company Description */
+.company-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  margin-bottom: 30px;
+}
+
+.newsletter-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #444;
+  background: #2a2a2a;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: #666;
+}
+
+.newsletter-button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 12px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background-color: #444;
+}
+
+.newsletter-note {
+  font-size: 12px;
+  color: #777;
+}
+
+/* Social Media */
+.social-media {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.social-icon {
+  color: #aaa;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #fff;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid #333;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+.copyright {
+  font-size: 13px;
+  color: #777;
+}
+
+.payment-methods {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.payment-methods span {
+  font-size: 13px;
+  color: #777;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.payment-icon {
+  background: #333;
+  color: #aaa;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+  
+  .footer-top {
+    gap: 30px;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-button {
+    width: 100%;
+  }
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #333;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.scroll-top:hover {
+  background: #444;
+  transform: translateY(-3px);
+}
